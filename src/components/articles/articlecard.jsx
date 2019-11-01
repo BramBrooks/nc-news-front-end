@@ -4,7 +4,6 @@ import { Link } from "@reach/router";
 // import { Container } from './styles';
 
 const ArticleCard = ({ article }) => {
-  // console.log(article, "<----- article");
   return (
     <>
       <Link to={`/articles/${article.article_id}`}>

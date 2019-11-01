@@ -12,7 +12,6 @@ class Articleslist extends Component {
   };
 
   fetchContent = () => {
-    // console.log(this.props.topic);
     api.getArticles(this.props.topic).then(articlesData => {
       this.setState({ articles: articlesData, isLoading: false });
     });
@@ -29,7 +28,7 @@ class Articleslist extends Component {
   }
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, articles } = this.state;
     if (isLoading) {
       return <p>Loading....</p>;
     }
@@ -42,10 +41,10 @@ class Articleslist extends Component {
           <Router>
             <SingleArticle path="/:id" />
           </Router>
-          {this.state.articles.map(article => {
+          {articles.map(article => {
             return (
               <li key={article.article_id}>
-                <ArticleCard article={article} />
+                <ArticleCard article={article} username={this.props.username} />
               </li>
             );
           })}

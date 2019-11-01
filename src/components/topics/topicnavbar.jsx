@@ -20,7 +20,7 @@ class TopicNavBar extends Component {
     return (
       <>
         <nav>
-          <p>Topics</p>
+          <h2>Topics</h2>
           {this.state.topics.map(topicObj => {
             return (
               <li key={topicObj.slug}>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import * as api from "../../api";
 import Header from "../header";
 import TopicNavbar from "../topics/topicnavbar";
-// import CommentCard from "../comments/commentscard";
+import CommentList from "../comments/commentlist";
 
 class SingleArticle extends Component {
   state = {
@@ -40,8 +40,12 @@ class SingleArticle extends Component {
         <p>Author: {author}</p>
         <p>Votes: {votes}</p>
         <p>Comments: {comment_count}</p>
+        <br />
+        <br />
 
-        {/* <CommentCard /> */}
+        <br />
+        <br />
+        <CommentList id={this.props.id} username={this.props.username} />
       </>
     );
   }

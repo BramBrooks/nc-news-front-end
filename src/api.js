@@ -4,17 +4,6 @@ const request = axios.create({
   baseURL: "https://northcoders-news-bram-brooks.herokuapp.com/api"
 });
 
-// export const getArticles = () => {
-//   return request
-//     .get("/articles")
-//     .then(articleData => {
-//       return articleData.data.articles;
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// };
-
 export const getArticles = topic => {
   return request.get("/articles", { params: { topic } }).then(articleData => {
     return articleData.data.articles;
@@ -30,5 +19,28 @@ export const getTopics = () => {
 export const getArticleByArticleID = articleID => {
   return request.get(`/articles/${articleID}`).then(articleData => {
     return articleData.data.article;
+  });
+};
+
+export const getCommentsByArticeID = articleID => {
+  return request.get(`/articles/${articleID}/comments`).then(commentData => {
+    return commentData.data.comments;
+  });
+};
+
+export const postCommentByArticleID = (articleID, comment) => {
+  return request
+    .post(`/articles/${articleID}/comments`, comment)
+    .then(postedCommentResponse => {
+      return postedCommentResponse.data.comment;
+    })
+    .catch(err => {
+      console.log(err, "<---- error");
+    });
+};
+
+export const deleteCommentByCommentID = commentID => {
+  return request.delete(`/comments/${commentID}`).catch(err => {
+    console.log(err, "<---- error");
   });
 };
