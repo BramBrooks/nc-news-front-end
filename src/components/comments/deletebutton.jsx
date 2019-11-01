@@ -1,22 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 import * as api from "../../api";
 
-function DeleteButton(props) {
-  // erm...
-  // make delete handler
-  // make it a class so can get this.stuff on the go...
+class DeleteButton extends Component {
+  handleDelete = event => {
+    api
+      .deleteCommentByCommentID(this.props.comment_id)
+      .then(this.props.removeDeletedCommentFromState(this.props.comment_id));
+    // set state again? need to re-render on comment list
+  };
 
-  return (
-    <>
-      <button onClick={api.deleteCommentByCommentID(props.comment_id)}>
-        Delete Comment
-      </button>
-    </>
-  );
+  render() {
+    return (
+      <>
+        <button onClick={this.handleDelete}>Delete Comment</button>
+      </>
+    );
+  }
 }
 
 export default DeleteButton;
 
-// create an onclick to invoke delete comment by comment It
-
+// create an onClick to invoke delete comment by comment ID
 // need to re-render the comment list following deletion

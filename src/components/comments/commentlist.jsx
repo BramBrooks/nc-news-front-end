@@ -21,6 +21,16 @@ class CommentList extends Component {
     this.setState({ comments: updatedStateComments });
   };
 
+  removeDeletedCommentFromState = deletedCommentID => {
+    const copyOfCommentsArray = [...this.state.comments];
+
+    const result = copyOfCommentsArray.filter(comment => {
+      return comment.comment_id !== deletedCommentID;
+    });
+
+    this.setState({ comments: result });
+  };
+
   componentDidMount() {
     this.fetchContent();
   }
@@ -44,7 +54,13 @@ class CommentList extends Component {
           {comments.map(comment => {
             return (
               <li key={comment.comment_id}>
-                <CommentCard comment={comment} username={this.props.username} />
+                <CommentCard
+                  comment={comment}
+                  username={this.props.username}
+                  removeDeletedCommentFromState={
+                    this.removeDeletedCommentFromState
+                  }
+                />
               </li>
             );
           })}

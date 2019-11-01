@@ -10,7 +10,7 @@ class CommentBox extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    console.log(this.props.username, "<--- props");
+
     const comment = {
       body: this.state.commentToAdd,
       username: this.props.username

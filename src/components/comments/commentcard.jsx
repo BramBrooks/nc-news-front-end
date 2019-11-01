@@ -11,7 +11,12 @@ class CommentCard extends Component {
         <p>votes: {votes}</p>
         <p>{body}</p>
         {author === this.props.username ? (
-          <DeleteButton comment_id={comment_id} />
+          <DeleteButton
+            comment_id={comment_id}
+            removeDeletedCommentFromState={
+              this.props.removeDeletedCommentFromState
+            }
+          />
         ) : null}
 
         <br />
