@@ -44,3 +44,12 @@ export const deleteCommentByCommentID = commentID => {
     console.log(err, "<---- error");
   });
 };
+
+// export const patchVotes = ArticleID => {
+//   return request.patch(`/articles/${ArticleID}`).catch(err => {
+//     console.log(err, "<------ error");
+//   });
+// };
+
+// here what needs to happen?
+// does this need a return value? Because as long as it updates the api, we'll get the data back when the component re-renders on mount?

@@ -6,7 +6,6 @@ class DeleteButton extends Component {
     api
       .deleteCommentByCommentID(this.props.comment_id)
       .then(this.props.removeDeletedCommentFromState(this.props.comment_id));
-    // set state again? need to re-render on comment list
   };
 
   render() {
@@ -19,6 +18,3 @@ class DeleteButton extends Component {
 }
 
 export default DeleteButton;
-
-// create an onClick to invoke delete comment by comment ID
-// need to re-render the comment list following deletion

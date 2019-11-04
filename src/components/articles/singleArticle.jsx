@@ -3,6 +3,7 @@ import * as api from "../../api";
 import Header from "../header";
 import TopicNavbar from "../topics/topicnavbar";
 import CommentList from "../comments/commentlist";
+import VotingButton from "../votingbutton";
 
 class SingleArticle extends Component {
   state = {
@@ -11,10 +12,7 @@ class SingleArticle extends Component {
   };
 
   componentDidMount() {
-    // console.log("mounting...");
-
     const { id } = this.props;
-    // console.log(id, "<---- id");
 
     api.getArticleByArticleID(id).then(singleArticleResponse => {
       this.setState({ article: singleArticleResponse, isLoading: false });
@@ -22,8 +20,6 @@ class SingleArticle extends Component {
   }
 
   render() {
-    // console.log("rendering...");
-
     const { isLoading } = this.state;
     if (isLoading) {
       return <p>Loading....</p>;
@@ -38,8 +34,10 @@ class SingleArticle extends Component {
 
         <p>{body}</p>
         <p>Author: {author}</p>
-        <p>Votes: {votes}</p>
+
         <p>Comments: {comment_count}</p>
+
+        <VotingButton votes={votes} />
         <br />
         <br />
 
