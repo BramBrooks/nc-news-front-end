@@ -24,8 +24,9 @@ class ArticleCard extends Component {
           <p>Author: {author}</p>
           <p>Comment Count: {comment_count}</p>
           <p>Created At: {created_at}</p>
+          <p>Article ID: {article_id}</p>
 
-          <VotingButton votes={votes} />
+          <VotingButton votes={votes} id={article_id} from={"articles"} />
 
           <br />
         </Link>

@@ -25,7 +25,14 @@ class SingleArticle extends Component {
       return <p>Loading....</p>;
     }
 
-    const { title, body, votes, author, comment_count } = this.state.article;
+    const {
+      title,
+      body,
+      votes,
+      author,
+      comment_count,
+      article_id
+    } = this.state.article;
     return (
       <>
         <Header />
@@ -37,7 +44,7 @@ class SingleArticle extends Component {
 
         <p>Comments: {comment_count}</p>
 
-        <VotingButton votes={votes} />
+        <VotingButton votes={votes} id={article_id} from={"articles"} />
         <br />
         <br />
 

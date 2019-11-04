@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DeleteButton from "./deletebutton";
+import VotingButton from "../votingbutton";
 
 class CommentCard extends Component {
   render() {
@@ -8,8 +9,9 @@ class CommentCard extends Component {
       <>
         <p>author: {author}</p>
         <p>posted: {created_at}</p>
-        <p>votes: {votes}</p>
+
         <p>{body}</p>
+
         {author === this.props.username ? (
           <DeleteButton
             comment_id={comment_id}
@@ -18,6 +20,7 @@ class CommentCard extends Component {
             }
           />
         ) : null}
+        <VotingButton votes={votes} id={comment_id} from={"comments"} />
 
         <br />
         <br />
