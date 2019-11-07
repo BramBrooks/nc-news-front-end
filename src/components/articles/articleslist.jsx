@@ -4,12 +4,15 @@ import * as api from "../../api";
 
 import { Router } from "@reach/router";
 import SingleArticle from "./singleArticle";
+import Sortbydropdown from "../sortbydropdown";
 
 class Articleslist extends Component {
   state = {
     articles: [],
     isLoading: true
   };
+
+  // here sort by? extra argument? //
 
   fetchContent = () => {
     api.getArticles(this.props.topic).then(articlesData => {
@@ -36,7 +39,7 @@ class Articleslist extends Component {
     return (
       <>
         <h2>Articles</h2>
-
+        <Sortbydropdown />
         <ul>
           <Router>
             <SingleArticle path="/:id" />
