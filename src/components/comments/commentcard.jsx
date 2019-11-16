@@ -1,32 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 import DeleteButton from "./deletebutton";
 import VotingButton from "../votingbutton";
 
-class CommentCard extends Component {
-  render() {
-    const { author, created_at, votes, body, comment_id } = this.props.comment;
-    return (
-      <>
-        <p>author: {author}</p>
-        <p>posted: {created_at}</p>
+function CommentCard(props) {
+  const { author, created_at, votes, body, comment_id } = props.comment;
+  return (
+    <>
+      <p>author: {author}</p>
+      <p>posted: {created_at}</p>
 
-        <p>{body}</p>
+      <p>{body}</p>
 
-        {author === this.props.username ? (
-          <DeleteButton
-            comment_id={comment_id}
-            removeDeletedCommentFromState={
-              this.props.removeDeletedCommentFromState
-            }
-          />
-        ) : null}
-        <VotingButton votes={votes} id={comment_id} from={"comments"} />
+      {author === props.username ? (
+        <DeleteButton
+          comment_id={comment_id}
+          removeDeletedCommentFromState={props.removeDeletedCommentFromState}
+        />
+      ) : null}
+      <VotingButton votes={votes} id={comment_id} from={"comments"} />
 
-        <br />
-        <br />
-      </>
-    );
-  }
+      <p>
+        * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *{" "}
+      </p>
+    </>
+  );
 }
 
 export default CommentCard;

@@ -53,7 +53,7 @@ class CommentList extends Component {
         <ul>
           {comments.map(comment => {
             return (
-              <li key={comment.comment_id}>
+              <li id="liststyle" key={comment.comment_id}>
                 <CommentCard
                   comment={comment}
                   username={this.props.username}

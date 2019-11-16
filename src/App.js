@@ -35,5 +35,3 @@ class App extends Component {
 }
 
 export default App;
-
-// getUsername coming through everywhere

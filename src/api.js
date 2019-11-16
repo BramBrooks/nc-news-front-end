@@ -4,9 +4,17 @@ const request = axios.create({
   baseURL: "https://northcoders-news-bram-brooks.herokuapp.com/api"
 });
 
-export const getArticles = topic => {
-  return request.get("/articles", { params: { topic } }).then(articleData => {
-    return articleData.data.articles;
+export const getArticles = (topic, sort_by) => {
+  return request
+    .get("/articles", { params: { topic, sort_by } })
+    .then(articleData => {
+      return articleData.data.articles;
+    });
+};
+
+export const getAllUsers = () => {
+  return request.get("/users").then(usersData => {
+    return usersData.data.articles;
   });
 };
 
@@ -33,25 +41,13 @@ export const postCommentByArticleID = (articleID, comment) => {
     .post(`/articles/${articleID}/comments`, comment)
     .then(postedCommentResponse => {
       return postedCommentResponse.data.comment;
-    })
-    .catch(err => {
-      console.log(err, "<---- error");
     });
 };
 
 export const deleteCommentByCommentID = commentID => {
-  return request.delete(`/comments/${commentID}`).catch(err => {
-    console.log(err, "<---- error");
-  });
+  return request.delete(`/comments/${commentID}`);
 };
 
 export const patchVotes = (voteChange, id, from) => {
-  return request
-    .patch(`${from}/${id}`, { inc_votes: voteChange })
-    .then(patchVoteResponse => {
-      console.log(patchVoteResponse, "<---- patchVoteResponse");
-    })
-    .catch(err => {
-      console.log(err, "<------ error");
-    });
+  return request.patch(`${from}/${id}`, { inc_votes: voteChange });
 };

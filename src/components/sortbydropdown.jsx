@@ -1,21 +1,26 @@
-import React from "react";
+import React, { Component } from "react";
 
-function Sortbydropdown(props) {
-  return (
-    <form>
-      <fieldset>
+class SortByDropDown extends Component {
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
         <legend>Sort By</legend>
         <p>
-          {/* <label>Sort By...</label> */}
-          <select id="myList">
-            <option value="1">Date Created</option>
-            <option value="2">Comment Count</option>
-            <option value="3">Votes</option>
+          <select id="mylist" onChange={this.props.handleDropDownChange}>
+            <option value="created_at" onSelect={this.handleSubmit}>
+              Date Created
+            </option>
+            <option value="comment_count" onSelect={this.handleSubmit}>
+              Comment Count
+            </option>
+            <option value="votes" onSelect={this.handleSubmit}>
+              Votes
+            </option>
           </select>
         </p>
-      </fieldset>
-    </form>
-  );
+      </form>
+    );
+  }
 }
 
-export default Sortbydropdown;
+export default SortByDropDown;

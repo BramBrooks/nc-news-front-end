@@ -2,18 +2,21 @@ import Header from "./header";
 import Articleslist from "./articles/articleslist";
 import TopicList from "./topics/topicnavbar";
 
-import React, { Component } from "react";
+import React from "react";
 
-class ArticlePage extends Component {
-  render() {
-    return (
-      <>
-        <Header />
-        <TopicList />
-        <Articleslist topic={this.props.topic} username={this.props.username} />
-      </>
-    );
-  }
+function Articlepage(props) {
+  return (
+    <div className="container-2">
+      <Header />
+      <p></p>
+      <TopicList />
+      <p>
+        * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+        * * * * * * * * * *{" "}
+      </p>
+      <Articleslist topic={props.topic} username={props.username} />
+    </div>
+  );
 }
 
-export default ArticlePage;
+export default Articlepage;

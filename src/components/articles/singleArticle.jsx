@@ -37,6 +37,7 @@ class SingleArticle extends Component {
       <>
         <Header />
         <TopicNavbar />
+
         <h2>{title}</h2>
 
         <p>{body}</p>
@@ -45,11 +46,7 @@ class SingleArticle extends Component {
         <p>Comments: {comment_count}</p>
 
         <VotingButton votes={votes} id={article_id} from={"articles"} />
-        <br />
-        <br />
 
-        <br />
-        <br />
         <CommentList id={this.props.id} username={this.props.username} />
       </>
     );
