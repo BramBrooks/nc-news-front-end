@@ -1,6 +1,6 @@
 # NC News - Northcoders News Site
 
-Welcome to the Northcoders News! This React appication was created during the Front End phase of the Northcoders Developer course.
+Welcome to Northcoders News! This React application was created during the Front End phase of the Northcoders Developer course.
 
 ## Getting Started
 
