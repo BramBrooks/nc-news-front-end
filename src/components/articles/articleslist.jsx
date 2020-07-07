@@ -10,13 +10,15 @@ class Articleslist extends Component {
   state = {
     articles: [],
     isLoading: true,
-    sort_by: ""
+    sort_by: "",
   };
 
   fetchContent = () => {
-    api.getArticles(this.props.topic, this.state.sort_by).then(articlesData => {
-      this.setState({ articles: articlesData, isLoading: false });
-    });
+    api
+      .getArticles(this.props.topic, this.state.sort_by)
+      .then((articlesData) => {
+        this.setState({ articles: articlesData, isLoading: false });
+      });
   };
 
   componentDidMount() {
@@ -32,42 +34,37 @@ class Articleslist extends Component {
     }
   }
 
-  handleDropDownChange = event => {
+  handleDropDownChange = (event) => {
     this.setState({ sort_by: event.target.value }, () => {});
   };
 
   render() {
     const { isLoading, articles } = this.state;
     if (isLoading) {
-      return <p>Loading....</p>;
+      return <p>Loading...</p>;
     }
 
     return (
       <>
-        <h2>Articles</h2>
-        <Sortbydropdown handleDropDownChange={this.handleDropDownChange} />
         <ul>
           <Router>
             <SingleArticle path="/:id" />
           </Router>
 
-          {articles.map(article => {
+          {articles.map((article) => {
             return (
-              <div id="liststyle">
+              <div id="article-list">
                 <li key={article.article_id}>
                   <ArticleCard
                     article={article}
                     username={this.props.username}
                   />
                 </li>
-                <p>
-                  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-                  * * * * * * * * * * * * * * *{" "}
-                </p>
               </div>
             );
           })}
         </ul>
+        {<Sortbydropdown handleDropDownChange={this.handleDropDownChange} />}
       </>
     );
   }

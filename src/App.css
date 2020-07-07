@@ -1,21 +1,395 @@
-body {
-  margin: 0;
-  font-family: Courier New;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: white;
-  text-align: center;
+/* <-------------------------- GLOBAL STYLING ----------------------->*/
+
+:link {
+  text-decoration: none;
   color: black;
 }
 
-#liststyle {
-  list-style-type: none;
+a:-webkit-any-link {
+  color: black;
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 100px;
 }
 
 h2 {
+  position: relative;
+  font-size: 50px;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 20% auto;
+  margin-bottom: -50px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Courier New;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #e0e4e8;
+  text-align: center;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* <-------------------------- HEADER & LOGO ----------------------->*/
+
+.nc_news_title {
+  color: grey;
+  position: relative;
+  top: 6px;
+  left: -73px;
+  margin-left: 180px;
+}
+
+.nc_news-_logo {
+  width: 150px;
+  height: auto;
+  position: relative;
+  top: 70px;
+  left: 180px;
+  margin-left: 30px;
+}
+
+/* <-------------------------- NAVBAR ----------------------->*/
+
+.navbar-container {
+  margin: 30px 20px 0px 165px;
+  padding-right: 100px;
+  text-align: left;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+
+#navbar li {
+  list-style: none;
+  display: inline-block;
+}
+
+#navbar a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+#navbar a:before {
+  content: "";
+  width: 100%;
+  position: absolute;
+  border-bottom: 8px solid #313131;
+  bottom: 0;
+  left: 350px;
+}
+
+#navbar a:hover:before {
+  left: 0;
+  border-bottom: 2px solid black;
+}
+
+/* <-------------------------- ARTICLES LIST PAGE / GRID LAYOUT ----------------------->*/
+
+/* articles title class not needed at present */
+/* re-visit GRID layout */
+
+#topics-title {
+  margin-left: 150px;
+}
+
+.nav-bar-and-article-card-grid {
+  display: grid;
+  grid-template-columns: 20% 80%;
   font-size: 30px;
+}
+
+.topic-and-articles-header-grid {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  font-size: 30px;
+}
+
+#article-list {
+  margin: -30px 300px 0px 300px;
+}
+
+#sort_by_drop_down {
+  color: red;
+  /* display: grid;
+  grid-template-columns: 80% 20%; */
+  margin-top: -4000px;
+  position: relative;
+}
+
+/********* Article Cards *********/
+
+#article-card {
+  margin: 60px -200px 0px -200px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid rgb(202, 197, 197);
+  border-radius: 5px;
+}
+
+#article-card:hover {
+  border-color: rgb(128, 124, 124);
+}
+
+/* card titles */
+
+.card-titles {
+  font-size: 48px;
+  text-align: center;
+  text-transform: capitalize;
+  border: solid #787c7e;
+  border-width: 0.5px 0px 0px 0px;
+  padding: 20px 0px 0px 0px;
+  margin: 25px 10px -15px -10px;
+}
+
+#single-article-card-titles {
+  border-width: 0.5px 0px 0.5px 0px;
+  font-size: 45px;
+  text-align: center;
+  padding: 8px 0px;
+}
+
+#single-article {
+  margin: -150px 100px -50px 500px;
+  border: solid rgb(202, 197, 197);
+  border-width: 2px 2px 0px 2px;
+  border-radius: 5px;
+  font-size: 30px;
+  padding: 20px 50px 50px 50px;
+  background-color: white;
+}
+
+/* info_line */
+
+/* first used in article card  */
+
+.info_line {
+  font-size: 15px;
+  text-align: left;
+  color: #787c7e;
+  position: relative;
+  margin: 0px 0px -12px -7px;
+  font-family: Arial, sans-serif;
+}
+
+#single_article_info_line {
+  margin: 0px 0px -8px -7px;
+}
+
+/* info line in single article */
+
+#single-article .info_line {
+  margin-top: 20px;
+}
+
+/* info line in comment card */
+
+/* NEED TO FIGURE THIS OUT */
+
+#commment-card_info_line {
+  margin-left: 3px;
+  margin-bottom: -3px;
+  font-size: 15px;
+}
+
+/* <-------------------------- SINGLE ARTICLE SECTION -----------------------> */
+
+#single_article_body {
+  margin-top: 40px;
+  margin-left: -5px;
+  font-size: 25px;
+  text-align: left;
+}
+
+#comment_input_box {
+  margin: 0px 100px 50px 500px;
+  border: solid rgb(202, 197, 197);
+  border-width: 0px 2px 2px 2px;
+  border-radius: 5px;
+  font-size: 30px;
+  padding: 20px 50px 50px 50px;
+  background-color: white;
+}
+
+#comment_input_box_text {
+  margin-top: -10px;
+  margin-bottom: 20px;
+  color: #787c7e;
+  font-size: 25px;
+}
+
+/* <-------------------------- COMMENT CARD SECTION ----------------------->*/
+
+#commment_card {
+  margin: 20px 100px 50px 460px;
+  padding: 20px 50px 22px 50px;
+  border: 2px solid rgb(202, 197, 197);
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: white;
+  text-align: left;
+}
+
+#comment_card_text {
+  border-style: solid;
+  border-color: #787c7e;
+  border-width: 1px 0px 0px 0px;
+  margin-top: 0px;
+  margin-left: 2px;
+  padding-top: -5px;
+  font-size: 25px;
+}
+
+#comments_section_title {
+  position: relative;
+  margin-left: 420px;
+}
+
+/* come back to this one ********************  ------>  */
+
+.comment-count-position {
+  position: relative;
+  margin: 50px 0px 7px 0px;
+  font-size: 25px;
+  text-align: center;
+  color: #787c7e;
+}
+
+.vote-count-position {
+  position: relative;
+  margin-top: -56px;
+  margin-left: 150px;
+  font-size: 26px;
+  text-align: center;
+  color: #787c7e;
+}
+
+/* Up to here  */
+
+/* <-------------------------- VOTING BUTTONS ----------------------->*/
+
+#voting_buttons_container {
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+/* #single_article_body #voting_buttons_container {
+  margin-bottom: 0px;
+  margin-top: 0px;
+} */
+
+.delete_button {
+  background-color: #4caf50;
+  border: 1px;
+  margin: 0px 5px 0px 0px;
+  color: white;
+  padding: 4px 10px;
+  text-align: right;
+  text-decoration: none;
+  display: inline-block;
+  visibility: visible;
+  position: inherit;
+  /* font-size: 21px; */
+}
+
+.button-up {
+  background-color: #4caf50;
+  border: 1px;
+  margin: 0px 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  visibility: visible;
+  font-size: 16px;
+}
+
+.button-down {
+  background-color: #4caf50;
+  border: 1px;
+  margin: 0px 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  visibility: visible;
+  font-size: 16px;
+}
+
+#comment_card_voting_button {
+  color: black;
+  text-align: center;
+}
+
+#vote-text {
+  color: #787c7e;
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+#comment_card_voting_button #vote-text {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+#article-button #vote-text {
+  color: #787c7e;
+  font-size: 25px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+#Up:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#Down:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/********************** comment box input box  **********************/
+
+input:focus,
+textarea {
+  outline: none !important;
+}
+
+input[type="text"] {
+  width: 50%;
+  font-family: Courier New;
+  padding: 12px 20px;
+  margin: -8px 0;
+  box-sizing: border-box;
+  font-size: 25px;
+  text-align: center;
+  border: 1px solid #787c7e;
+
+  border-radius: 4px;
+}
+
+input[type="text"]:focus {
+  color: black;
+}
+
+/* submit button */
+
+input[type="submit"] {
+  background-color: lightblue;
+  border: 1px solid black;
+  text-align: center;
+  display: none;
 }

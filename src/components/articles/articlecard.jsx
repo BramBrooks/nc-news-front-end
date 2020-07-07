@@ -11,18 +11,23 @@ function Articlecard(props) {
     author,
     comment_count,
     created_at,
-    votes
+    votes,
   } = props.article;
+
   return (
     <div id="article-card">
       <Link to={`/articles/${article_id}`}>
-        <p>{title}</p>
-        <p>Author: {author}</p>
-        <p>Topic: {topic} </p>
+        <ul id="article-card-hover">
+          <div className="info_line">
+            <p>
+              Posted by {author} · {created_at} · {comment_count} commments
+            </p>
+          </div>
 
-        <p>Comments: {comment_count}</p>
-        <p>Posted: {created_at}</p>
+          <div className="card-titles">{title}</div>
+        </ul>
 
+        {/* <p className="comment-count-position">Comments: {comment_count}</p> */}
         <VotingButton votes={votes} id={article_id} from={"articles"} />
       </Link>
     </div>

@@ -5,13 +5,13 @@ import * as api from "../api";
 class VotingButton extends Component {
   state = { voteCount: 0 };
 
-  handleClick = event => {
+  handleClick = (event) => {
     event.preventDefault();
 
     this.voteHandler(event.target.id);
   };
 
-  voteHandler = vote => {
+  voteHandler = (vote) => {
     let voteChange = 0;
     if (vote === "Up") {
       voteChange = 1;
@@ -23,7 +23,7 @@ class VotingButton extends Component {
 
     api.patchVotes(voteChange, id, from);
 
-    this.setState(prevState => {
+    this.setState((prevState) => {
       return { voteCount: prevState.voteCount + voteChange };
     });
   };
@@ -31,21 +31,34 @@ class VotingButton extends Component {
   render() {
     return (
       <div>
-        <button
-          disabled={this.state.voteCount === 1}
-          onClick={this.handleClick}
-          id="Up"
-        >
-          VOTE UP
-        </button>
-        <button
-          disabled={this.state.voteCount === 0}
-          onClick={this.handleClick}
-          id="Down"
-        >
-          VOTE DOWN
-        </button>
-        <p>Votes: {this.props.votes + this.state.voteCount}</p>
+        {/* this is where the word votes used to be */}
+        <div id="vote-text">
+          Votes:{this.props.votes + this.state.voteCount}
+        </div>
+        <div id="voting_buttons_container">
+          <div>
+            <button
+              className="button-up"
+              hidden={this.state.voteCount === 1}
+              disabled={this.state.voteCount === 1}
+              enabled={this.state.voteCount === 0}
+              onClick={this.handleClick}
+              id="Up"
+            >
+              ▲
+            </button>
+
+            <button
+              className="button-down"
+              hidden={this.state.voteCount === 0}
+              disabled={this.state.voteCount === 0}
+              onClick={this.handleClick}
+              id="Down"
+            >
+              ▼
+            </button>
+          </div>
+        </div>
       </div>
     );
   }

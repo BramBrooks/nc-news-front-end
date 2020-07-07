@@ -6,25 +6,25 @@ import CommentBox from "./commentbox";
 class CommentList extends Component {
   state = {
     comments: [],
-    isLoading: true
+    isLoading: true,
   };
 
   fetchContent = () => {
-    api.getCommentsByArticeID(this.props.id).then(commentData => {
+    api.getCommentsByArticeID(this.props.id).then((commentData) => {
       this.setState({ comments: commentData, isLoading: false });
     });
   };
 
-  addNewCommentToState = postedCommment => {
+  addNewCommentToState = (postedCommment) => {
     const updatedStateComments = [postedCommment, ...this.state.comments];
 
     this.setState({ comments: updatedStateComments });
   };
 
-  removeDeletedCommentFromState = deletedCommentID => {
+  removeDeletedCommentFromState = (deletedCommentID) => {
     const copyOfCommentsArray = [...this.state.comments];
 
-    const result = copyOfCommentsArray.filter(comment => {
+    const result = copyOfCommentsArray.filter((comment) => {
       return comment.comment_id !== deletedCommentID;
     });
 
@@ -38,7 +38,7 @@ class CommentList extends Component {
   render() {
     const { isLoading, comments } = this.state;
     if (isLoading) {
-      return <p>Loading....</p>;
+      return <p>Loading...</p>;
     }
 
     return (
@@ -48,10 +48,10 @@ class CommentList extends Component {
           addNewCommentToState={this.addNewCommentToState}
           username={this.props.username}
         />
-        <h2>Comments!</h2>
+        <h2 id="comments_section_title">Comments</h2>
 
         <ul>
-          {comments.map(comment => {
+          {comments.map((comment) => {
             return (
               <li id="liststyle" key={comment.comment_id}>
                 <CommentCard

@@ -6,7 +6,7 @@ class TopicNavBar extends Component {
   state = { topics: [], isLoading: true };
 
   componentDidMount() {
-    api.getTopics().then(topicData => {
+    api.getTopics().then((topicData) => {
       this.setState({ topics: topicData, isLoading: false });
     });
   }
@@ -14,21 +14,27 @@ class TopicNavBar extends Component {
   render() {
     const { isLoading } = this.state;
     if (isLoading) {
-      return <p>Loading....</p>;
+      return <p>Loading...</p>;
     }
 
     return (
       <>
-        <nav id="liststyle">
-          <h2>Topics</h2>
-          {this.state.topics.map(topicObj => {
-            return (
-              <li key={topicObj.slug}>
-                <Link to={`/topics/${topicObj.slug}`}>{topicObj.slug}</Link>
-              </li>
-            );
-          })}
-        </nav>
+        <div class="navbar-container">
+          <ul id="navbar">
+            {this.state.topics.map((topicObj) => {
+              return (
+                <li className={topicObj.slug} key={topicObj.slug}>
+                  <Link
+                    data-status={topicObj.slug.toString()}
+                    to={`/topics/${topicObj.slug}`}
+                  >
+                    {topicObj.slug}{" "}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </>
     );
   }

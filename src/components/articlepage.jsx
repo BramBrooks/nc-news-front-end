@@ -6,16 +6,22 @@ import React from "react";
 
 function Articlepage(props) {
   return (
-    <div className="container-2">
+    <>
       <Header />
-      <p></p>
-      <TopicList />
-      <p>
-        * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        * * * * * * * * * *{" "}
-      </p>
-      <Articleslist topic={props.topic} username={props.username} />
-    </div>
+
+      <div className="topic-and-articles-header-grid">
+        <div id="topics-title">
+          <h2>Topics</h2>
+        </div>
+
+        <h2>Articles</h2>
+      </div>
+
+      <div className="nav-bar-and-article-card-grid">
+        <TopicList />
+        <Articleslist topic={props.topic} username={props.username} />
+      </div>
+    </>
   );
 }
 

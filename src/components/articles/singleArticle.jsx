@@ -8,13 +8,13 @@ import VotingButton from "../votingbutton";
 class SingleArticle extends Component {
   state = {
     article: {},
-    isLoading: true
+    isLoading: true,
   };
 
   componentDidMount() {
     const { id } = this.props;
 
-    api.getArticleByArticleID(id).then(singleArticleResponse => {
+    api.getArticleByArticleID(id).then((singleArticleResponse) => {
       this.setState({ article: singleArticleResponse, isLoading: false });
     });
   }
@@ -22,7 +22,7 @@ class SingleArticle extends Component {
   render() {
     const { isLoading } = this.state;
     if (isLoading) {
-      return <p>Loading....</p>;
+      return <p>Loading...</p>;
     }
 
     const {
@@ -31,22 +31,34 @@ class SingleArticle extends Component {
       votes,
       author,
       comment_count,
-      article_id
+      article_id,
+      created_at,
     } = this.state.article;
     return (
       <>
         <Header />
-        <TopicNavbar />
 
-        <h2>{title}</h2>
+        <div className="nav-bar-and-article-card-grid">
+          <TopicNavbar />
+        </div>
 
-        <p>{body}</p>
-        <p>Author: {author}</p>
+        <div id="single-article">
+          <p className="info_line" id="single_article_info_line">
+            Posted by {author} · {created_at} · {comment_count} comments
+          </p>
 
-        <p>Comments: {comment_count}</p>
+          <p className="card-titles" id="single-article-card-titles">
+            {title}
+          </p>
 
-        <VotingButton votes={votes} id={article_id} from={"articles"} />
+          <p id="single_article_body">{body}</p>
 
+          <div id="article-button">
+            <VotingButton votes={votes} id={article_id} from={"articles"} />
+          </div>
+
+          {/* <p>Comments: {comment_count}</p> */}
+        </div>
         <CommentList id={this.props.id} username={this.props.username} />
       </>
     );

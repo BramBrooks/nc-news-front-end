@@ -4,18 +4,18 @@ import * as api from "../../api";
 class CommentBox extends Component {
   state = { commentToAdd: "" };
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({ commentToAdd: event.target.value });
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
 
     const comment = {
       body: this.state.commentToAdd,
-      username: this.props.username
+      username: this.props.username,
     };
-    api.postCommentByArticleID(this.props.id, comment).then(postedComment => {
+    api.postCommentByArticleID(this.props.id, comment).then((postedComment) => {
       this.props.addNewCommentToState(postedComment);
     });
     this.setState({ commentToAdd: "" });
@@ -24,28 +24,31 @@ class CommentBox extends Component {
   render() {
     return (
       <>
-        <h2>Comment box</h2>
+        <div id="comment_input_box">
+          <form onSubmit={this.handleSubmit}>
+            <div id="comment_input_box_text">
+              {" "}
+              {/* <label name="item-input">
+                Please add a comment about this article:
+              </label> */}
+            </div>
 
-        <form onSubmit={this.handleSubmit}>
-          <label name="item-input">
-            Please add a comment about this article:
-          </label>
-
-          <input
-            className="commentBox"
-            onChange={this.handleChange}
-            type="text"
-            value={this.state.commentToAdd}
-            name="item-input"
-            maxLength="200"
-            autoComplete="off"
-            size="50"
-          ></input>
-          <input type="submit"></input>
-        </form>
+            <input
+              className="commentBox"
+              onChange={this.handleChange}
+              type="text"
+              placeholder="Please add a comment..."
+              value={this.state.commentToAdd}
+              name="item-input"
+              maxLength="200"
+              autoComplete="off"
+              size="50"
+            ></input>
+            <input type="submit"></input>
+          </form>
+        </div>
       </>
     );
   }
 }
-
 export default CommentBox;
