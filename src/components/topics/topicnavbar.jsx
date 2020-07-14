@@ -13,9 +13,9 @@ class TopicNavBar extends Component {
 
   render() {
     const { isLoading } = this.state;
-    if (isLoading) {
-      return <p>Loading...</p>;
-    }
+    // if (isLoading) {
+    //   return <p>Loading...</p>;
+    // }
 
     return (
       <>
@@ -34,6 +34,7 @@ class TopicNavBar extends Component {
               );
             })}
           </ul>
+          {/* {<Sortbydropdown handleDropDownChange={this.handleDropDownChange} />} */}
         </div>
       </>
     );

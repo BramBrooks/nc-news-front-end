@@ -35,7 +35,7 @@ class Articleslist extends Component {
   }
 
   handleDropDownChange = (event) => {
-    this.setState({ sort_by: event.target.value }, () => {});
+    this.setState({ sort_by: event.target.value }, () => { });
   };
 
   render() {
@@ -64,7 +64,7 @@ class Articleslist extends Component {
             );
           })}
         </ul>
-        {<Sortbydropdown handleDropDownChange={this.handleDropDownChange} />}
+        {/* {<Sortbydropdown handleDropDownChange={this.handleDropDownChange} />} */}
       </>
     );
   }

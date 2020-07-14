@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "@reach/router";
-
 import VotingButton from "../votingbutton";
+
+import FormatDatesForFrontEnd from '../../utils'
 
 function Articlecard(props) {
   const {
@@ -14,13 +15,22 @@ function Articlecard(props) {
     votes,
   } = props.article;
 
+
+  // ok so I've sort of got it working
+  // need to make a utils function
+  // import it in, test it, use it in the two places it needs it 
+  // which are single article and article card 
+
+  const formattedDate = FormatDatesForFrontEnd(created_at);
+
+
   return (
     <div id="article-card">
       <Link to={`/articles/${article_id}`}>
         <ul id="article-card-hover">
           <div className="info_line">
             <p>
-              Posted by {author} · {created_at} · {comment_count} commments
+              Posted by {author} · {formattedDate} · {comment_count} commments
             </p>
           </div>
 

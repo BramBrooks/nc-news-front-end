@@ -1,9 +1,12 @@
 import React from "react";
 import DeleteButton from "./deletebutton";
 import VotingButton from "../votingbutton";
+import FormatDatesForFrontEnd from '../../utils'
 
 function CommentCard(props) {
   const { author, created_at, votes, body, comment_id } = props.comment;
+  const formattedDate = FormatDatesForFrontEnd(created_at);
+
   return (
     <>
       <div id="commment_card">
@@ -18,7 +21,7 @@ function CommentCard(props) {
                 }
               />
             ) : null}{" "}
-            Posted by {author} · {created_at}{" "}
+            Posted by {author} · {formattedDate}
           </p>
         </div>
         <div id="comment_card_text">

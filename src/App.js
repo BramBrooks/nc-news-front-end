@@ -2,7 +2,11 @@ import React, { Component } from "react";
 import ArticlePage from "./components/articlepage";
 import { Router } from "@reach/router";
 import SingleArticle from "./components/articles/singleArticle";
+import Header from "./components/header";
+// import TopicList from './components/topics/topicnavbar'
+
 import "./App.css";
+import TopicNavBar from "./components/topics/topicnavbar";
 
 class App extends Component {
   state = {
@@ -17,6 +21,21 @@ class App extends Component {
   render() {
     return (
       <>
+
+        <Header />
+        <div className="topic-and-articles-header-grid">
+          <div id="topics-title">
+            <h2>Topics</h2>
+
+
+          </div>
+
+          <h2>Articles</h2>
+        </div>
+
+        {/* <TopicNavBar /> */}
+
+        {/* <TopicList /> */}
         <Router>
           <ArticlePage username={this.state.user.username} path="/" />
           <ArticlePage username={this.state.user.username} path="/articles" />
