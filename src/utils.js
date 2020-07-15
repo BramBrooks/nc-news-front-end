@@ -2,11 +2,6 @@
 
 function FormatDatesForFrontEnd(input) {
 
-
-
- // change for where minutes or hours or days are less than 10
-
-
  const dateStamp = new Date(input);
  const minutes = dateStamp.getMinutes();
  const hours = dateStamp.getHours();
@@ -19,21 +14,14 @@ function FormatDatesForFrontEnd(input) {
  let formattedMonth = '';
 
  if (hours < 10) { formattedHours = "0" + hours } else {
-
   formattedHours = hours;
-
  }
-
 
  if (minutes < 10) { formattedMinutes = '0' + minutes } else {
-
-  formattedMinutes = minutes;
+  formattedMinutes = minutes
  }
 
-
- if (date < 10) {
-  formattedDate = '0' + date
- } else { formattedDate = date }
+ if (date < 10) { formattedDate = '0' + date } else { formattedDate = date }
 
 
  if (month < 10) { formattedMonth = '0' + month } else { formattedMonth = month };

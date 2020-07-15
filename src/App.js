@@ -3,8 +3,6 @@ import ArticlePage from "./components/articlepage";
 import { Router } from "@reach/router";
 import SingleArticle from "./components/articles/singleArticle";
 import Header from "./components/header";
-// import TopicList from './components/topics/topicnavbar'
-
 import "./App.css";
 import TopicNavBar from "./components/topics/topicnavbar";
 
@@ -25,17 +23,19 @@ class App extends Component {
         <Header />
         <div className="topic-and-articles-header-grid">
           <div id="topics-title">
-            <h2>Topics</h2>
-
+            {/* <h2>Topic</h2> */}
 
           </div>
 
-          <h2>Articles</h2>
+          <h2 id='article_title'>Articles</h2>
         </div>
 
-        {/* <TopicNavBar /> */}
 
-        {/* <TopicList /> */}
+
+        <div className='nav-bar-and-article-card-grid' id='navbar'><TopicNavBar /></div>
+
+
+
         <Router>
           <ArticlePage username={this.state.user.username} path="/" />
           <ArticlePage username={this.state.user.username} path="/articles" />

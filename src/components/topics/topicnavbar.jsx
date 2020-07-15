@@ -19,7 +19,10 @@ class TopicNavBar extends Component {
 
     return (
       <>
+
+
         <div class="navbar-container">
+          <h2 id='topic_title'>Topic</h2>
           <ul id="navbar">
             {this.state.topics.map((topicObj) => {
               return (

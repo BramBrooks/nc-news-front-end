@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../../api";
-import Header from "../header";
-import TopicNavbar from "../topics/topicnavbar";
+// import Header from "../header";
+// import TopicNavbar from "../topics/topicnavbar";
 import CommentList from "../comments/commentlist";
 import VotingButton from "../votingbutton";
 
@@ -25,7 +25,7 @@ class SingleArticle extends Component {
   render() {
     const { isLoading } = this.state;
     if (isLoading) {
-      return <p>Loading...</p>;
+      return <p></p>;
     }
 
     const {
@@ -42,19 +42,13 @@ class SingleArticle extends Component {
 
     return (
       <>
-        {/* <Header /> */}
-
-        <div className="nav-bar-and-article-card-grid">
-          <TopicNavbar />
-          {/* this is the nav bar that was causing issues  */}
-        </div>
 
         <div id="single-article">
           <p className="info_line" id="single_article_info_line">
             Posted by {author} · {formattedDate} · {comment_count} comments
           </p>
 
-          <p className="card-titles" id="single-article-card-titles">
+          <p id="single-article-card-titles" >
             {title}
           </p>
 
@@ -64,7 +58,7 @@ class SingleArticle extends Component {
             <VotingButton votes={votes} id={article_id} from={"articles"} />
           </div>
 
-          {/* <p>Comments: {comment_count}</p> */}
+
         </div>
         <CommentList id={this.props.id} username={this.props.username} />
 

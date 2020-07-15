@@ -16,10 +16,6 @@ function Articlecard(props) {
   } = props.article;
 
 
-  // ok so I've sort of got it working
-  // need to make a utils function
-  // import it in, test it, use it in the two places it needs it 
-  // which are single article and article card 
 
   const formattedDate = FormatDatesForFrontEnd(created_at);
 

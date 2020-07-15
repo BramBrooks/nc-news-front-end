@@ -11,12 +11,12 @@ function Articlepage(props) {
 
 
 
+      {
+        <div className='topics_postiion '>
+          {/* <TopicNavBar /> */}
 
-      <div className="nav-bar-and-article-card-grid">
-        <TopicNavBar />
-
-        <Articleslist topic={props.topic} username={props.username} />
-      </div>
+          <Articleslist topic={props.topic} username={props.username} />
+        </div>}
     </>
   );
 }

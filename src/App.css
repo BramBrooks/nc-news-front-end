@@ -11,7 +11,26 @@ a:-webkit-any-link {
 
 h1 {
   font-size: 100px;
+  position: absolute;
+  top: 6px;
+  left: 673px;
+  margin-left: -100px;
+  margin-bottom: 1120px;
+  padding-bottom: 100px; 
+  color: grey;
+
 }
+
+
+.nc_news_title {
+  color: grey;
+  top: 6px;
+  left: 673px;
+  margin-left: 100px;
+    margin-bottom: 1120px;
+  padding-bottom: 100px; 
+     }
+
 
 h2 {
   position: relative;
@@ -40,13 +59,7 @@ li {
 
 /* <-------------------------- HEADER & LOGO ----------------------->*/
 
-.nc_news_title {
-  color: grey;
-  position: relative;
-  top: 6px;
-  left: -73px;
-  margin-left: 180px;
-}
+
 
 .nc_news-_logo {
   width: 150px;
@@ -54,7 +67,8 @@ li {
   position: relative;
   top: 70px;
   left: 180px;
-  margin-left: 30px;
+  margin-left: 20px;
+   margin-top: -9px;
 }
 
 /* <-------------------------- NAVBAR ----------------------->*/
@@ -98,24 +112,37 @@ li {
 /* articles title class not needed at present */
 /* re-visit GRID layout */
 
+
+.topics_postiion {
+
+margin-top: -200px; 
+margin-left: 350px; 
+position: absolute; 
+
+}
+
+
 #topics-title {
   margin-left: 150px;
 }
 
 .nav-bar-and-article-card-grid {
   display: grid;
+
   grid-template-columns: 20% 80%;
   font-size: 30px;
+      /* margin-bottom: -50px; */
+
 }
 
 .topic-and-articles-header-grid {
   display: grid;
   grid-template-columns: 20% 80%;
   font-size: 30px;
-}
+} 
 
 #article-list {
-  margin: -30px 300px 0px 300px;
+  margin: -30px 300px 0px 300px;  
 }
 
 /* #sort_by_drop_down {
@@ -124,10 +151,29 @@ li {
   position: relative;
 } */
 
+
+#topic_title {
+
+     margin-bottom: 40px;
+  margin-left: 38px;
+      margin-top: 3px;
+}
+
+
+#article_title {
+
+margin-top: 180px;
+    margin-left: 20px;
+    margin-bottom: -90px;
+    position: relative;
+
+}
+
+
 /********* Article Cards *********/
 
 #article-card {
-  margin: 60px -200px 0px -200px;
+  margin: 75px -200px 0px -200px;
   padding: 20px;
   background-color: white;
   border: 1px solid rgb(202, 197, 197);
@@ -151,10 +197,15 @@ li {
 }
 
 #single-article-card-titles {
-  border-width: 0.5px 0px 0.5px 0px;
+  border-width: 0.5px 0px 0.5px 0px !important;
   font-size: 45px;
   text-align: center;
   padding: 8px 0px;
+  border: solid #787c7e;
+  margin: 25px 10px -15px -10px;
+
+
+
 }
 
 #single-article {
@@ -162,7 +213,6 @@ li {
   border: solid rgb(202, 197, 197);
   border-width: 2px 2px 0px 2px;
   border-radius: 5px;
-  font-size: 30px;
   padding: 20px 50px 50px 50px;
   background-color: white;
 }
