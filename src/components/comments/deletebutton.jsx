@@ -12,7 +12,7 @@ class DeleteButton extends Component {
     return (
       <>
         <button className="delete_button" onClick={this.handleDelete}>
-          Delete Comment
+          Delete
         </button>
       </>
     );

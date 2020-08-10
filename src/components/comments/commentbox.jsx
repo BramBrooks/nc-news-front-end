@@ -27,10 +27,7 @@ class CommentBox extends Component {
         <div id="comment_input_box">
           <form onSubmit={this.handleSubmit}>
             <div id="comment_input_box_text">
-              {" "}
-              {/* <label name="item-input">
-                Please add a comment about this article:
-              </label> */}
+
             </div>
 
             <input

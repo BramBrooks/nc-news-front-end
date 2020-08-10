@@ -18,25 +18,13 @@ class App extends Component {
 
   render() {
     return (
+
       <>
 
         <Header />
-        <div className="topic-and-articles-header-grid">
-          <div id="topics-title">
-            {/* <h2>Topic</h2> */}
+        <TopicNavBar />
 
-          </div>
-
-          <h2 id='article_title'>Articles</h2>
-        </div>
-
-
-
-        <div className='nav-bar-and-article-card-grid' id='navbar'><TopicNavBar /></div>
-
-
-
-        <Router>
+        <Router >
           <ArticlePage username={this.state.user.username} path="/" />
           <ArticlePage username={this.state.user.username} path="/articles" />
           <ArticlePage
@@ -48,6 +36,7 @@ class App extends Component {
             username={this.state.user.username}
           />
         </Router>
+
       </>
     );
   }

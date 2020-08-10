@@ -38,7 +38,8 @@ class CommentList extends Component {
   render() {
     const { isLoading, comments } = this.state;
     if (isLoading) {
-      return <p>Loading...</p>;
+      // this where loading used to be
+      return <p></p>;
     }
 
     return (
@@ -50,21 +51,24 @@ class CommentList extends Component {
         />
         <h2 id="comments_section_title">Comments</h2>
 
-        <ul>
-          {comments.map((comment) => {
-            return (
-              <li id="liststyle" key={comment.comment_id}>
-                <CommentCard
-                  comment={comment}
-                  username={this.props.username}
-                  removeDeletedCommentFromState={
-                    this.removeDeletedCommentFromState
-                  }
-                />
-              </li>
-            );
-          })}
-        </ul>
+
+        <div id='comment_card_container'>
+          <ul>
+            {comments.map((comment) => {
+              return (
+                <li id="liststyle" key={comment.comment_id}>
+                  <CommentCard
+                    comment={comment}
+                    username={this.props.username}
+                    removeDeletedCommentFromState={
+                      this.removeDeletedCommentFromState
+                    }
+                  />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </>
     );
   }

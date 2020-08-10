@@ -47,25 +47,30 @@ class Articleslist extends Component {
 
     return (
       <>
-        <ul>
-          <Router>
-            <SingleArticle path="/:id" />
-          </Router>
+        {/* <h2 id='articles_title'>Articles</h2> */}
 
-          {articles.map((article) => {
-            return (
-              <div id="article-list">
-                <li key={article.article_id}>
-                  <ArticleCard
-                    article={article}
-                    username={this.props.username}
-                  />
-                </li>
-              </div>
-            );
-          })}
-        </ul>
-        {/* {<Sortbydropdown handleDropDownChange={this.handleDropDownChange} />} */}
+        <div id='article_card_container'>
+
+          <ul>
+            <Router>
+              <SingleArticle path="/:id" />
+            </Router>
+
+            {articles.map((article) => {
+              return (
+                <div id="article_list">
+                  <li key={article.article_id}>
+                    <ArticleCard
+                      article={article}
+                      username={this.props.username}
+                    />
+                  </li>
+                </div>
+              );
+            })}
+          </ul>
+          {/* {<Sortbydropdown handleDropDownChange={this.handleDropDownChange} />} */}
+        </div>
       </>
     );
   }

@@ -43,18 +43,18 @@ class SingleArticle extends Component {
     return (
       <>
 
-        <div id="single-article">
+        <div id="single_article">
           <p className="info_line" id="single_article_info_line">
             Posted by {author} · {formattedDate} · {comment_count} comments
           </p>
 
-          <p id="single-article-card-titles" >
+          <p id="single_article_card_titles" >
             {title}
           </p>
 
           <p id="single_article_body">{body}</p>
 
-          <div id="article-button">
+          <div id="article_button">
             <VotingButton votes={votes} id={article_id} from={"articles"} />
           </div>
 

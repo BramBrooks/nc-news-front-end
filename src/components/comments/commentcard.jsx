@@ -9,8 +9,8 @@ function CommentCard(props) {
 
   return (
     <>
-      <div id="commment_card">
-        <div className="info_line" id="commment-card_info_line">
+      <div id="comment_card">
+        <div className="info_line" id="comment_card_info_line">
           {" "}
           <p>
             {author === props.username ? (

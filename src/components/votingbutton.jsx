@@ -31,14 +31,14 @@ class VotingButton extends Component {
   render() {
     return (
       <div>
-        {/* this is where the word votes used to be */}
-        <div id="vote-text">
+
+        <div id="vote_text">
           Votes:{this.props.votes + this.state.voteCount}
         </div>
         <div id="voting_buttons_container">
           <div>
             <button
-              className="button-up"
+              className="button_up"
               hidden={this.state.voteCount === 1}
               disabled={this.state.voteCount === 1}
               enabled={this.state.voteCount === 0}
@@ -49,7 +49,7 @@ class VotingButton extends Component {
             </button>
 
             <button
-              className="button-down"
+              className="button_down"
               hidden={this.state.voteCount === 0}
               disabled={this.state.voteCount === 0}
               onClick={this.handleClick}

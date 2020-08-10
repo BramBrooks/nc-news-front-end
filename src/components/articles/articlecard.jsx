@@ -21,21 +21,24 @@ function Articlecard(props) {
 
 
   return (
-    <div id="article-card">
+
+
+    <div id="article_card">
       <Link to={`/articles/${article_id}`}>
-        <ul id="article-card-hover">
+        <ul >
           <div className="info_line">
             <p>
               Posted by {author} · {formattedDate} · {comment_count} commments
             </p>
           </div>
 
-          <div className="card-titles">{title}</div>
+          <div className="card_titles">{title}</div>
         </ul>
 
-        {/* <p className="comment-count-position">Comments: {comment_count}</p> */}
+        {/* <p>Comments: {comment_count}</p> */}
         <VotingButton votes={votes} id={article_id} from={"articles"} />
       </Link>
+
     </div>
   );
 }
