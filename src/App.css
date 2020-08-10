@@ -12,9 +12,9 @@
 
 .center_all {
   /* display: flex;
-  justify-content: center;  */
-  /* background-color: blue; */
-  margin-left: 50px; 
+  justify-content: center;  
+  background-color: blue; */
+  margin-left: 150px; 
 }  
 
 
@@ -145,6 +145,8 @@ h1 {
  
 
 /* <-------------------------- TOPIC & ARTICLE TITLES ----------------------->*/
+
+
 
 .topic_and_articles_header_grid {
     display: grid;

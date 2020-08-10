@@ -8,7 +8,7 @@ function Articlecard(props) {
   const {
     article_id,
     title,
-    topic,
+    // topic,
     author,
     comment_count,
     created_at,

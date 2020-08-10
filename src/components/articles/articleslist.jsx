@@ -4,7 +4,7 @@ import * as api from "../../api";
 
 import { Router } from "@reach/router";
 import SingleArticle from "./singleArticle";
-import Sortbydropdown from "../sortbydropdown";
+// import Sortbydropdown from "../sortbydropdown";
 
 class Articleslist extends Component {
   state = {
@@ -45,11 +45,14 @@ class Articleslist extends Component {
       // removed the loading 
     }
 
+
+
     return (
       <>
+
         {/* <h2 id='articles_title'>Articles</h2> */}
 
-        <div id='article_card_container'>
+        < div id='article_card_container' >
 
           <ul>
             <Router>
@@ -70,7 +73,7 @@ class Articleslist extends Component {
             })}
           </ul>
           {/* {<Sortbydropdown handleDropDownChange={this.handleDropDownChange} />} */}
-        </div>
+        </div >
       </>
     );
   }

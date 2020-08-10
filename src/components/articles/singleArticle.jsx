@@ -26,6 +26,7 @@ class SingleArticle extends Component {
     const { isLoading } = this.state;
     if (isLoading) {
       return <p></p>;
+      // loading
     }
 
     const {

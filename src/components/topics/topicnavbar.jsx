@@ -12,7 +12,7 @@ class TopicNavBar extends Component {
   }
 
   render() {
-    const { isLoading } = this.state;
+    // const { isLoading } = this.state;
     // if (isLoading) {
     //   return <p>Loading...</p>;
     // }
