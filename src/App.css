@@ -1,26 +1,7 @@
 
-
-/* Centre Eveything  */
-
-
-/* .center_all {
-  display: flex;
-  justify-content: center; 
-  background-color: blue;
-}   */
-
-
 .center_all {
-  /* display: flex;
-  justify-content: center;  
-  background-color: blue; */
   margin-left: 150px; 
 }  
-
-
-/* #center_all {
-background-color: blue;
-} */
 
 
 
@@ -113,21 +94,9 @@ body {
     position: absolute;
     margin-top: 128px;
     margin-left: 19px;
-    padding: 10px 911px 9000px 50px;
-    /* border-left: 1px solid rgb(202, 197, 197); */
-    /* border-right: 1px dotted rgb(202, 197, 197); */
-    /* border: 1px solid black; */
-      /* border-left: 1px dashed rgb(202, 197, 197); */
-    /* border-top: 1px solid rgb(202, 197, 197); */
-    /* border-left: 1px solid black;
-    border-right: 1px solid black; */
+    padding: 10px 911px 90px 50px;
+
     }
-
-
-
-
-
-
 
 
 /* <-------------------------- NC News Title ----------------------->*/
@@ -175,10 +144,7 @@ h1 {
     text-align: center;
     }
 
-
-
 /* NAVBAR AND ARTICLE / SINGLE ARTICLE SECTION */
-
 
 .nav_bar_and_article_card_grid {
     display: grid;
@@ -411,7 +377,7 @@ h1 {
 .delete_button {
      background-color: #4caf50;
     border: 1px;
-    margin: -3px 0px 0px 571px;
+    margin: -3px 0px 0px 606px;
     color: white;
     padding: 3px 6px;
     text-align: right;
