@@ -41,8 +41,7 @@ class Articleslist extends Component {
   render() {
     const { isLoading, articles } = this.state;
     if (isLoading) {
-      return <p></p>;
-      // removed the loading 
+      return <p id="article_list_loading">Loading...</p>;
     }
 
 
