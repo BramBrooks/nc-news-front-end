@@ -1,8 +1,4 @@
 
-.center_all {
-  margin-left: 150px; 
-}  
-
 
 /* <-------------------------- LOADING --------------------------->*/
 
@@ -10,9 +6,16 @@
 #article_list_loading {
 
     margin-left: 206px;
-    margin-top: 170px;
-    position: sticky;
+    margin-top: 220px;
+    position: fixed; 
+    top: 0; 
 }
+ 
+.center_all {
+    margin-left: 150px; 
+}  
+
+
 
 
 /* <-------------------------- GLOBAL STYLING ----------------------->*/
