@@ -1,10 +1,16 @@
+// import Sortbydropdown from "../sortbydropdown";
 import React, { Component } from "react";
 import ArticleCard from "./articlecard";
 import * as api from "../../api";
-
 import { Router } from "@reach/router";
 import SingleArticle from "./singleArticle";
-// import Sortbydropdown from "../sortbydropdown";
+
+// Class Component
+// Getting Article Data from API based on topic
+// Tiggers re-rendering of app on receipt of data
+// Re factor with SortBy Drop-Down
+
+// ***** How does it know which topic is current topic? *****
 
 class Articleslist extends Component {
   state = {
@@ -35,24 +41,20 @@ class Articleslist extends Component {
   }
 
   handleDropDownChange = (event) => {
-    this.setState({ sort_by: event.target.value }, () => { });
+    this.setState({ sort_by: event.target.value }, () => {});
   };
 
   render() {
     const { isLoading, articles } = this.state;
     if (isLoading) {
-      return <p id="article_list_loading">Loading...</p>;
+      return (
+        <p id="article_list_loading">Site Currently Down For Maintenance...</p>
+      );
     }
-
-
 
     return (
       <>
-
-        {/* <h2 id='articles_title'>Articles</h2> */}
-
-        < div id='article_card_container' >
-
+        <div id="article_card_container">
           <ul>
             <Router>
               <SingleArticle path="/:id" />
@@ -72,7 +74,7 @@ class Articleslist extends Component {
             })}
           </ul>
           {/* {<Sortbydropdown handleDropDownChange={this.handleDropDownChange} />} */}
-        </div >
+        </div>
       </>
     );
   }
