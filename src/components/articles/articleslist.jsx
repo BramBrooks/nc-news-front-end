@@ -10,8 +10,6 @@ import SingleArticle from "./singleArticle";
 // Tiggers re-rendering of app on receipt of data
 // Re factor with SortBy Drop-Down
 
-// ***** How does it know which topic is current topic? *****
-
 class Articleslist extends Component {
   state = {
     articles: [],
@@ -46,10 +44,9 @@ class Articleslist extends Component {
 
   render() {
     const { isLoading, articles } = this.state;
+
     if (isLoading) {
-      return (
-        <p id="article_list_loading">Site Currently Down For Maintenance...</p>
-      );
+      return <p id="article_list_loading">Loading...</p>;
     }
 
     return (
