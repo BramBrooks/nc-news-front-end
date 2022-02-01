@@ -8,10 +8,7 @@ function Articlepage(props) {
   return (
     <>
 
-
-
-
-      {
+     {
         <div className='topics_postiion '>
 
 
